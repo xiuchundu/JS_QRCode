@@ -1,0 +1,27 @@
+    <!DOCTYPE html>  
+    <html lang="en">  
+    <head>  
+        <meta charset="UTF-8">  
+        <title>js生成二维码</title>  
+        <script src="qrcode.js"></script>  
+         
+    </head>  
+    <body>  
+    <div id="qrcode">  
+    </div>  
+      
+    <input type="hidden" id="getval" value="http://blog.csdn.net/dcx_abc"/>  
+    <script>  
+      
+        var qrcode = new QRCode(document.getElementById("qrcode"), {  
+            width : 400,//设置宽高  
+            height : 400  
+        });  
+            document.getElementById("getval").onclick =function(){  
+            qrcode.makeCode(document.getElementById("getval").value);  
+        };  
+      
+        qrcode.makeCode(document.getElementById("getval").value);  
+    </script>  
+    </body>  
+    </html>  
