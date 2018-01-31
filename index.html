@@ -6,14 +6,16 @@
         <script src="qrcode.js"></script>  
     </head>  
     <body>  
-    <div id="qrcode">  
-    </div>  
+    <div id="qrcode" style="margin:auto; position: absolute;left: 40%;top:10%;">  
+    </div>
       
     <input type="hidden" id="getval" value="http://blog.csdn.net/dcx_abc"/>  
     <script>  
         var qrcode = new QRCode(document.getElementById("qrcode"), {  
             width : 300,//设置宽高  
-            height : 300  
+            height : 300,
+            colorDark : 'red', 
+            colorLight : '#ffffff',   
         });  
             document.getElementById("getval").onclick =function(){  
             qrcode.makeCode(document.getElementById("getval").value);  
