@@ -19,7 +19,7 @@
       
     <input type="hidden" id="getval" value="http://blog.csdn.net/dcx_abc"/>  
 
-   <a id="downloadLink"></a>
+   <a id="downloadLink1"></a>
    <button type="button" onclick="downloadClick()">下载</button>
     <script>  
         var qrcode = new QRCode(document.getElementById("qrcode"), {  
@@ -32,21 +32,21 @@
             qrcode.makeCode(document.getElementById("getval").value);  
         };  
       
-        qrcode.makeCode(document.getElementById("getval").value);  
+        qrcode.makeCode(document.getElementById("getval").value); //生成了二维码图片
 
          //js
   function downloadClick () {
     // 获取base64的图片节点
-    var img = document.getElementById('qrcode').getElementsByTagName('img')[0];
+    var img1 = document.getElementById('qrcode').getElementsByTagName('img')[0];
     // 构建画布
     var canvas = document.createElement('canvas');
-    canvas.width = img.width;
-    canvas.height = img.height;
-    canvas.getContext('2d').drawImage(img, 0, 0);
+    canvas.width = img1.width;
+    canvas.height = img1.height;
+    canvas.getContext('2d').drawImage(img1, 0, 0);
     // 构造url
     url = canvas.toDataURL('image/png');
     // 构造a标签并模拟点击
-    var downloadLink = document.getElementById('downloadLink');
+    var downloadLink = document.getElementById('downloadLink1');
     downloadLink.setAttribute('href', url);
     downloadLink.setAttribute('download', '二维码.png');
     downloadLink.click();
